@@ -1,0 +1,18 @@
+#!/bin/bash
+
+
+read -p "dizini gosteriniz: " yol
+
+cd $yol | ls $yol
+
+sleep 1
+
+read -p "uzanti seciniz: " uzanti
+
+find $yol -name "*.$uzanti"
+
+sleep 1 
+
+read -p "tasinacak dizini gosteriniz: " dizin
+
+mv `find $yol -name "*.$uzanti"` $dizin

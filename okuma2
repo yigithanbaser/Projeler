@@ -1,0 +1,14 @@
+
+
+#!/bin/bash
+
+read -p "KARAR DIZININI GOSTERINIZ: " dizin
+
+cd $dizin | ls $dizin
+
+read -p "KARAR DOSYASINI SECINIZ: " dosya
+
+input="$dosya"
+while read line; do echo "$line"; done < "$dizin/$dosya"
+
+sed 's/^..//' $dizin/$dosya | tee $dizin/$dosya
